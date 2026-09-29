@@ -3,38 +3,38 @@
 
 #### ELEC70142 Digital VLSI Design
 
-### Lab 2 - Understanding and Editing Layout
+### Lab 2 - Understanding Layout (Part 1)
 
-##### *Peter Cheung, v2.1 - 29 September 2026*
+##### *Peter Cheung, v2.2 - 29 September 2026*
 
 ---
 ### Objectives
 ---
-By the end of this laboratory session, you should be able to do the following.
+By the end of this and the next laboratory session, you should be able to do the following.
 * Understand the different mask layers that make up the layout of an inverter.
 * Manually extract the circuit schematic of a 12-transistors logic gate from its layout.
-* Import a Verilog netlist into Custom Compiler as a schematic.
-* Use Synopsys's Custom Compiler tool to perform manual floorplanning and placement.
-* Use Synopsys's Custom Compiler tool to perform manual routing.
+* Import a Verilog netlist into **Custom Compiler** as a schematic.
+* Use Synopsys's **Custom Compiler**  to perform manual floorplanning and placement.
+* Use Synopsys's **Custom Compiler** to perform manual routing.
 * Import a GDSII layout and a CDL netlist into Custom Compiler.
 * Use Siemens's Calibre tool to find and fix design rule violations through DRC.
 * Use Siemens's Calibre tool to verify that a layout is the same as its netlist through LVS.
 
->Due to the length of this laboratory experiment, Lab 2 is now divided into Part 1 and Part 2:  
->* Part 1 (Tasks 1 & 2) is about understanding the layout of a VLSI circuit. 
->* Part 2 (Tasks 3 to 5) is about using Synopsys's Custom Compiler layout editor to create, modify and repair a layout.
+>Due to the length of this laboratory experiment will take two weeks as Lab 2 and Lab 3:  
+> Lab 2 is about understanding the layout of a VLSI circuit. 
+> Lab 3 is about using Synopsys's Custom Compiler layout editor to create, modify and repair a layout.
 
 
 ---
-### Task 1 - Deep Dive into Inverter Layout (30 min)
+### Task 1 - Deep Dive into Inverter Layout
 ---
 The purpose of this task is to understand the different mask layers that make up a simple inverter from the layout.  This helps you to appreciate the fabrication process and the physical aspect of VLSI design.
 
 **_Step 1: Launch Custom Compiler_**
 
-Log onto the teaching server ee-mill1 or ee-mill2 (depending on your group number), and set up the technology with **_vlsi-tooling/syn tsmc65LP_** as before.
+Log onto the teaching server ee-flip or ee-flop (depending on your group number), and set up the technology with **_synopsys tsmc65LP_** as before.
 
-Make a new folder for Lab 2 and launch Custom Compiler:
+Make a new folder for Lab 2 and launch **Custom Compiler**:
 ```bash
 cd ~/Labs
 mkdir Lab_2
