@@ -34,7 +34,11 @@ The purpose of this task is to understand the different mask layers that make up
 
 **_Step 1: Launch Custom Compiler_**
 
-Log onto the teaching server ee-flip or ee-flop (depending on your group number), and set up the technology with **_synopsys tsmc65LP_** as before.
+Log onto the teaching server ee-flip or ee-flop (depending on your group number), and set up the technology with **_synopsys tsmc65LP_** as before:
+
+```bash
+synopsys tsmc65LP
+```
 
 Make a new folder for Lab 2 and launch **Custom Compiler**:
 ```bash
