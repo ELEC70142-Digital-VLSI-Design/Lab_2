@@ -3,9 +3,9 @@
 
 #### ELEC70142 Digital VLSI Design
 
-### Lab 2 - Understanding Layout (Part 1)
+### Lab 2 - Understanding and Editing CMOS Layout
 
-##### *Peter Cheung, v2.2 - 29 September 2026*
+##### *Peter Cheung, v2.23 - 8 & 15 Oct 2026*
 
 ---
 ### Objectives
@@ -20,14 +20,16 @@ By the end of this and the next laboratory session, you should be able to do the
 * Use Siemens's Calibre tool to find and fix design rule violations through DRC.
 * Use Siemens's Calibre tool to verify that a layout is the same as its netlist through LVS.
 
->Due to the length of this laboratory experiment will take two weeks as Lab 2 and Lab 3:  
-> Lab 2 is about understanding the layout of a VLSI circuit. 
-> Lab 3 is about using Synopsys's Custom Compiler layout editor to create, modify and repair a layout.
-
+>Due to the length of this laboratory experiment will take two lab sessions and is divided into Part 1 and Part 2.
+> * Part 1 is about understanding the layout of a VLSI circuit. 
+> * Part 2 is about using Synopsys's Custom Compiler layout editor to create, modify and repair a layout.
 
 ---
+## PART 1 - Understanding Layout
+---
+
 ### Task 1 - Deep Dive into Inverter Layout
----
+
 The purpose of this task is to understand the different mask layers that make up a simple inverter from the layout.  This helps you to appreciate the fabrication process and the physical aspect of VLSI design.
 
 **_Step 1: Launch Custom Compiler_**
@@ -37,8 +39,7 @@ Log onto the teaching server ee-flip or ee-flop (depending on your group number)
 Make a new folder for Lab 2 and launch **Custom Compiler**:
 ```bash
 cd ~/Labs
-mkdir Lab_2
-cd Lab_2
+git clone https://github.com/ELEC70142-Digital-VLSI-Design/Lab_2
 custom &
 ```
 A Custom Compiler window will appear. You are now running the Synopsys Custom Compiler package in the background.
@@ -94,7 +95,7 @@ Discuss with your partner what you understand from this exercise.
 > * M1 - cell input output pin locations on metal 1
 
 
-### Task 2 - Extract Circuit from Layout (40 min)
+### Task 2 - Extract Circuit from Layout
 
 The goal of this task is for you to learn how to interpret a layout and re-create the transistor schematic of a 12-transistors standard cell.
 
@@ -118,7 +119,10 @@ You and your lab partner are now required to extract from this layout all the tr
 
 > You can remove the measurement and ruler annotations with the **_SHIFT-k_** command.
 
-### Task 3 - Hand Place the standard cells (45 min)
+---
+## PART 2 - Full Custom Layout Editing
+
+### Task 3 - Hand Place the standard cells 
 
 The purpose of this task is for you to learn how to use Custom Compiler for **layout editing**.  While you will not be designing layout of a gate from transistor up, you will still need to learn how to wire up synthesized modules and to connect them to the pad ring.
 
@@ -299,7 +303,7 @@ A correct placement produces **no violations**.  You will see one result under `
 
 > If you do get real violations they will almost always sit on a cell boundary, and the cause is two cells that are not exactly abutted, or whose power rails are not aligned.  Go back to Step 6 and re-align them.
 
-### Task 4 - Hand Route the standard cells (30 min)
+### Task 4 - Hand Route the standard cells
 
 The next task is to connect all these cells according to the following wiring diagram.
 
@@ -408,7 +412,7 @@ Then create the two power ports:
 
 Run a final **_Calibre -> Run nmDRC_**.  It should be clean apart from the `DRM.R.1` reminder.
 
-### Task 5 - Fixing a broken layout (60 min)
+### Task 5 - Fixing a broken layout
 
 The purpose of this task is to learn how to read Calibre's DRC and LVS reports and use them to find and fix mistakes in a layout.  You are given a completed layout of LFSR4 that contains a number of deliberate errors, together with the netlist of the circuit it is supposed to implement.  Your job is to bring the layout to a clean DRC and a `CORRECT` LVS.
 
